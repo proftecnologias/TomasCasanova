@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+* {
+    box-sizing: border-box;
+    padding:0px;
+    margin:0px;
+    font-family: 'Roboto', sans-serif;
+}
+.contentor {
+    display:grid;
+    grid-template-rows: 100px auto auto 50px;
+    grid-template-areas: 
+    'cabeçalho cabeçalho cabeçalho'
+    'cont-secundario cont-principal cont-principal'
+    'cont-secundario cont-principal cont-principal'
+    'rodape rodape rodape';
+    gap:5px;
+    width:90%;
+    margin:0 auto;
+    height:100vh;
+}
+header {
+    background:#013220;
+    grid-area: cabeçalho;
+    color:white;
+}
+nav {
+    display:grid;
+    grid-template-columns: 1fr 4fr;
+    height:100px;
+}
+
+.logo {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+}
+.logo img {
+    height:100px;
+    width:100px;
+}
+nav ul {
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height:100%;
+}
+nav ul li a {
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+nav ul li a:hover {
+    cursor: pointer;
+    border-bottom: 2px solid #fff;
+}
+
+aside {
+    grid-area: cont-secundario;
+    display:grid;
+    grid-template-columns: 1fr;
+    margin-top: 10px;
+    
+}
+aside img {
+    max-width: 100%;
+    max-height:100%;
+    object-fit: contain;
+    box-shadow: 5px 7px 9px #333;
+}
+    
+
+main {
+    background: #fff;
+    grid-area: cont-principal;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.destaque {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 5px 7px 9px #333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+footer {
+    background: #333;
+    grid-area:rodape;
+}
+.rodape {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+@media(max-width:500px){
+    .contentor {
+        grid-template-areas: 
+    'cabeçalho'
+    'cont-principal'
+    'cont-secundario'
+    'rodape';
+    }
+    nav {
+        grid-template-columns: 1fr;
+    }
+    .logo {
+        height:50px;
+    }
+    .rodape {
+        font-size: 16px;
+    }
+    aside img {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-bottom: none;
+    }
+}
